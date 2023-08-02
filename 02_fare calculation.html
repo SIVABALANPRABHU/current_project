@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PEOPLE TAXIS </title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWbrsBX7BA2A_0sb7pz0mb-UAx--hC4gc&libraries=places"></script>
+    <script src="02_fare calculation.js"></script>
+</head>
+<body onload="initialize()">
+    <h1>PEOPLE TAXIS</h1>
+    <form>
+        <label for="pickup_location">Pickup Location:</label>
+        <input type="text" id="pickup_location" placeholder="Enter pickup location" required>
+        <br><br>
+        
+        <label for="dropoff_location">Dropoff Location:</label>
+        <input type="text" id="dropoff_location" placeholder="Enter dropoff location" required>
+        <br><br>
+        
+        <label>Car Type:</label>
+        <input type="radio" name="car_type" value="sedan" checked> Sedan (4 Seater)
+        <input type="radio" name="car_type" value="muv"> MUV (7 Seater)
+        <br><br>
+        
+        <label>Add Luggage:</label>
+        <input type="checkbox" id="add_luggage">
+        <br><br>
+
+        <label>Add waiting charge</label>
+        <input type="checkbox" id="addwaitingCharge">
+        <br><br>
+        
+        <button type="button" onclick="calculatePrice()">Calculate Price</button>
+    </form>
+    
+    <h2>Estimated Details:</h2>
+    <p>Estimated Distance: <span id="estimated_distance"></span></p>
+    <p>Estimated Time: <span id="estimated_time"></span></p>
+    <p>Estimated Price: <span id="estimated_price"></span></p>
+    <P>Driver Charge: <b>500</b></P>
+    <p>Roof luggage carrier charge: <b>500</b></p>
+    <p>Waiting Charge :<b>200 per hour</b></p>
+</body>
+</html>
